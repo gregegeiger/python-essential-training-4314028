@@ -20,13 +20,8 @@ def factorial(num):
         return None
     if num == 0:
         return 1
-
-    num_factorial = 1
-
-    for multiplier in range(num,1,-1):
-        num_factorial *= multiplier
-
-    return num_factorial
+    # Use recursion to calculate factorial
+    return num * factorial(num - 1)
 
 
 
