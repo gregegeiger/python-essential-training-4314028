@@ -32,7 +32,6 @@ def encodeString(stringVal):
     for index in range(0, len(stringVal)):
         # examine the character at index position
         index_character = stringVal[index]
-        print(index_character)
 
         # Check the character at index
         # If it matches last_character just increment the character count
@@ -58,11 +57,15 @@ def encodeString(stringVal):
 
 def decodeString(encodedData):
     '''
-    Given a string return a list of tuples
-    AAAAABBBBAAA => [('A', 5), ('B', 4), ('A', 3)]
-    This is called Run Length Encoding
+    Given a list of tuples print the resulting string
+    [('A', 5), ('B', 4), ('A', 3)] => AAAAABBBBAAA
     '''
-    pass
+    # Iterate through list
+    for char_run in encodedData:
+        run_length = char_run[1]
+        while run_length > 0:
+            print(char_run[0], end='')
+            run_length -= 1
         
     return None
 
@@ -111,8 +114,9 @@ def main():
     '''
 
 
-    code_list = encodeString('AAAABBBAA')
-    print(code_list)
+    code_list = encodeString(art)
+
+    decodeString(code_list)
 
 
 
