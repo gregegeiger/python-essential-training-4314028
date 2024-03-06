@@ -23,10 +23,10 @@ If a number has no prime divisors, it is prime!
 
 
 
-def allPrimesUpTo(test_num):
+def allPrimesUpTo(max_num):
 
-    for num in range(1,test_num):
-        for factor in range(2, num):
+    for num in range(1,max_num):
+        for factor in range(2, int(num ** 0.5) +1):
             if num % factor == 0:
                 break         
         else:
