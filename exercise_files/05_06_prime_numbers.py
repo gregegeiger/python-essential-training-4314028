@@ -24,16 +24,27 @@ If a number has no prime divisors, it is prime!
 
 
 def allPrimesUpTo(max_num):
-
-    for num in range(1,max_num):
-        for factor in range(2, int(num ** 0.5) +1):
+    '''Print all prime numbers up to the max_num provided
+    
+    '''
+    # Create a list of the primes that you discover - seed it with 2
+    found_primes = [2]
+    for num in range(3,max_num):
+        for prime in found_primes:
+            if num % prime == 0:
+                print(f'{num} in not prime because {prime} is a factor')
+                break
+        else:
+            pass
+        for factor in range(prime, int(num ** 0.5) +1):
             if num % factor == 0:
                 break         
         else:
-            print(f'{num} is Prime')
+            print(f'{num} is prime')
+            found_primes.append(num)
 
       
-    return 0
+    return found_primes
 
 
 
@@ -41,7 +52,8 @@ def main():
     '''
     main function
     '''
-    allPrimesUpTo(100)
+    found_primes = allPrimesUpTo(100)
+    print(found_primes)
 
 
 
