@@ -57,17 +57,16 @@ def encodeString(stringVal):
 
 def decodeString(encodedData):
     '''
-    Given a list of tuples print the resulting string
+    Given a list of tuples create the resulting string
     [('A', 5), ('B', 4), ('A', 3)] => AAAAABBBBAAA
     '''
+    returned_string = ''
+
     # Iterate through list
     for char_run in encodedData:
-        run_length = char_run[1]
-        while run_length > 0:
-            print(char_run[0], end='')
-            run_length -= 1
-        
-    return None
+        returned_string = returned_string + char_run[0] * char_run[1]
+   
+    return returned_string
 
 def main():
     '''
@@ -116,7 +115,8 @@ def main():
 
     code_list = encodeString(art)
 
-    decodeString(code_list)
+    returned_string = decodeString(code_list)
+    print(returned_string)
 
 
 
