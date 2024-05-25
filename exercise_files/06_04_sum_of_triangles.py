@@ -24,7 +24,7 @@ Create a new function square(num) that returns num ** 2
 
 def triangle(num):
     '''
-    
+    Return the traingle number for num
     '''
     if num == 1:
         return num
@@ -33,7 +33,7 @@ def triangle(num):
 
 def square(num):
     '''
-    
+    Return the square of num
     '''
     return triangle(num) + triangle(num - 1)
 
